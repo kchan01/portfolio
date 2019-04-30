@@ -1,0 +1,86 @@
+img { /*formatting of the images themselves*/
+	width: 100%; /*setting height or width determines it's fit relative to the size of its available space outlined in item*/
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.item { /*items that contains the images*/
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 2888px;;
+	text-align: center;
+	color: white;
+	z-index: 1;
+	margin-top: 0px;
+}
+
+#pictures {
+	margin-top: -3%;
+	z-index: 1;
+}
+
+#pictures .item { /*picture columns*/
+  	width: 100%;
+}
+
+#pictures .row { /*picture row*/
+  	margin-top: 0px;
+}
+
+@keyframes plane1 {
+	0% {
+		left: 20%;
+		top: 0px;
+		transform: scale(0);
+	}
+
+	25% {
+		left:25%;
+		top: 2300px;
+		transform: scale(1.0);
+	}
+
+	50% {
+		left: 30%;
+		top: 4300px;
+		transform: scale(0.0);
+	}
+
+	75% {
+		left: 35%;
+		top: 6300px;
+		transform: scale(1.0);
+	}
+
+	100% {
+		left: 40%;
+		top: 8300px;
+		transform: scale(0);
+	}
+}
+/* if image is upside down, coordinates are reversed */
+.plane img {
+	height: 150px;
+	width: 150px;
+	animation-name: plane1;
+	animation-duration: 35s;
+	animation-timing-function: linear;
+	animation delay: 0.5s;
+	animation-iteration-count: infinite;
+	z-index: 99;
+}
+
+.plane.second img { /*second plane, for greater flight frequency */
+	top: -150px;
+	animation-delay: 15.0s;
+}
+
+.tack img {
+	top: 15%;
+	left: 15%;
+	height: 80px;
+	width: 60px;
+	z-index: 98;
+}
